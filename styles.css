@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 320px;
+  height: 450px;
+  background-color: rgb(48, 48, 48);
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+}
+
+.screen {
+  width: 320px;
+  height: 90px;
+  background-color: rgb(155, 155, 155);
+  border-radius: 10px;
+}
