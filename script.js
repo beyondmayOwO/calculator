@@ -41,3 +41,21 @@ function operate(operator, a, b) {
   }
 }
 
+const digitBtn = document.querySelectorAll('.digit');
+const operatorBtn = document.querySelectorAll('.operator');
+
+const screen = document.querySelector('.screen');
+const calculation = document.createElement('div');
+const result = document.createElement('div');
+calculation.textContent = '0 + 0';
+result.textContent = 0;
+
+screen.appendChild(calculation);
+screen.appendChild(result);
+
+calculation.className = 'calculation';
+result.className = 'result';
+
+let num = 0;
+let operator = '+';
+let subsequentNum = 0;
