@@ -41,6 +41,7 @@ function operate(operator, a, b) {
   }
 }
 
+//Organizing the screen display section
 const digitBtn = document.querySelectorAll('.digit');
 const operatorBtn = document.querySelectorAll('.operator');
 
@@ -59,3 +60,34 @@ result.className = 'result';
 let num = 0;
 let operator = '+';
 let subsequentNum = 0;
+
+digitBtn.forEach(Btn => {
+  Btn.addEventListener('click', () => {
+    num = Btn.textContent;
+    updateNum();
+    subsequentNum = Btn.textContent;
+    updateSubsequentNum();
+    //console.log(num);
+    //console.log(subsequentNum);
+  })
+})
+
+operatorBtn.forEach(Btn => {
+  Btn.addEventListener('click', () => {
+    operator = Btn.textContent;
+    //console.log(operator);
+    updateOperator();
+  })
+})
+
+function updateNum() {
+  return calculation.textContent = `${num} + 0`;
+}
+
+function updateOperator() {
+  return calculation.textContent = `${num} ${operator} 0`;
+}
+
+function updateSubsequentNum() {
+  return calculation.textContent = `${num} ${operator} ${subsequentNum}`;
+}
