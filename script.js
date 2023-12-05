@@ -41,7 +41,7 @@ function operate(operator, a, b) {
   }
 }
 
-//Organizing the screen display section
+// Organizing the screen display section
 const digitBtn = document.querySelectorAll('.digit');
 const operatorBtn = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
@@ -75,8 +75,13 @@ digitBtn.forEach(Btn => {
       updateNum();
     }
     else {
+      // To enter double digits. Then converts to number from string using unary plus operator (+)
       subsequentNum = +(subsequentNum + Btn.textContent);
       updateSubsequentNum();
+    }
+
+    if(calculation.textContent !== 0) {
+      clearValue(Btn.textContent);
     }
   })
 })
@@ -95,7 +100,6 @@ equals.addEventListener('click', () => {
 })
 
 allClear.addEventListener('click', reset);
-
 
 function updateNum() {
   return calculation.textContent = `${num}`;
