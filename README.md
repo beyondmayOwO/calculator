@@ -2,7 +2,7 @@
 
 ### Calculate the numbers (add, subtract, multiply, divide, remainder)
 
-### <a href="https://calculator-createdbymay.netlify.app/">Live Preview</a>
+### <a href="https://thatcalculator.netlify.app/">Live Preview</a>
 
 In calculator, you can add, subtract, multiply, divide numbers and find the remainder.
 
