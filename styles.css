@@ -44,8 +44,8 @@ button {
   border-radius: 7px;
 }
 
-.equals {
-  width: 237px;
+.equals, .all-clear {
+  width: 236px;
 }
 
 .calculation, .result {

@@ -14,10 +14,6 @@ function divide(a, b) {
   return a / b;
 }
 
-function remainder(a, b) {
-  return a % b;
-}
-
 function operate(operator, a, b) {
   switch (operator) {
 
@@ -33,9 +29,6 @@ function operate(operator, a, b) {
     case '÷':
       return divide(a, b);
 
-    case '%':
-      return remainder(a, b);
-
     default:
       return null;
   }
@@ -45,7 +38,6 @@ function operate(operator, a, b) {
 const digitBtn = document.querySelectorAll('.digit');
 const operatorBtn = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
-const clear = document.querySelector('.clear');
 const allClear = document.querySelector('.all-clear');
 
 const screen = document.querySelector('.screen');
@@ -66,6 +58,8 @@ let subsequentNum = 0;
 let answer = 0;
 // Flag to determine whether num or subsequentNum is being entered
 let isTypingNum = true;
+// Flag to determine whether first operator or subsequent operator is being entered
+let isFirstOperator = true;
 
 digitBtn.forEach(Btn => {
   Btn.addEventListener('click', () => {
@@ -78,19 +72,26 @@ digitBtn.forEach(Btn => {
       // To enter double digits. Then converts to number from string using unary plus operator (+)
       subsequentNum = +(subsequentNum + Btn.textContent);
       updateSubsequentNum();
-    }
-
-    if(calculation.textContent !== 0) {
-      clearValue(Btn.textContent);
+      isFirstOperator = false;
     }
   })
 })
 
 operatorBtn.forEach(Btn => {
   Btn.addEventListener('click', () => {
-    operator = Btn.textContent;
-    isTypingNum = false;
-    updateOperator();
+    if(isFirstOperator) {
+      operator = Btn.textContent;
+      isTypingNum = false;
+      updateOperator();
+    }
+    else {
+      answer = operate(operator, num, subsequentNum);
+      num = answer;
+      operator = Btn.textContent;
+      subsequentNum = 0;
+      isTypingNum = false;
+      updateOperator();
+    }
   })
 })
 
@@ -125,4 +126,5 @@ function reset() {
   calculation.textContent = 0;
   result.textContent = 0;
   isTypingNum = true;
+  isFirstOperator = true;
 }
