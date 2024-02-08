@@ -85,7 +85,7 @@ operatorBtn.forEach(Btn => {
       updateOperator();
     }
     else {
-      answer = operate(operator, num, subsequentNum);
+      answer = roundAnswer(operate(operator, num, subsequentNum));
       num = answer;
       operator = Btn.textContent;
       subsequentNum = 0;
@@ -96,7 +96,7 @@ operatorBtn.forEach(Btn => {
 })
 
 equals.addEventListener('click', () => {
-  answer = operate(operator, num, subsequentNum);
+  answer = roundAnswer(operate(operator, num, subsequentNum));
   updateAnswer();
 })
 
@@ -116,6 +116,10 @@ function updateSubsequentNum() {
 
 function updateAnswer() {
   return result.textContent = `${answer}`;
+}
+
+function roundAnswer(answer) {
+  return +(Math.round(answer + 'e+2') + 'e-2');
 }
 
 function reset() {

@@ -53,5 +53,20 @@ button {
   justify-content: flex-end;
   padding: 8px;
   font-family: 'DotGothic16', sans-serif;
-  font-size: 18px;
+  font-size: 19px;
+}
+
+.copyright {
+  /*background-color: #e5e7eb;*/
+  color: #a1a1aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 3px;
+}
+
+.copyright-link {
+  font-weight: bold;
+  color: #a1a1aa;
 }
