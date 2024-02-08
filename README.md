@@ -1,9 +1,7 @@
 # calculator
 
-### Calculate the numbers (add, subtract, multiply, divide, remainder)
+### Calculate the numbers (add, subtract, multiply, divide)
 
 ### <a href="https://thatcalculator.netlify.app/">Live Preview</a>
 
-In calculator, you can add, subtract, multiply, divide numbers and find the remainder.
-
-Note: Clearing(deleting) a number at a time function is yet to add to the project. It will be implemented later on this project.
+In calculator, you can add, subtract, multiply, and divide numbers. You can do calculations with multiple operators. The answer is rounded to two decimal places.
